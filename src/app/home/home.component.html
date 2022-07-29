@@ -1,0 +1,51 @@
+<div class="container">
+  <!-- Diretivas de Atributo -->
+  <div>
+    <h1>{{title}}</h1>
+    <h4>SPA Desenvolvimento, testes e aprimoramentos</h4>
+    <div [ngStyle]="{background: count < 5 ? 'yellow' : 'pink' }" [ngClass]="{custom: count > 5}">
+      <h2>Contador: {{ count }}</h2>
+    </div>
+  </div>
+
+  <!-- Diretivas Estruturais -->
+  <h3 *ngIf="count > 7 else menor" class="custom_maior_7">O timer ultrapassou os 7s!</h3>
+  <ng-template #menor>
+    <h3 class="custom_menor_7">O timer está abaixo dos 7s...</h3>
+  </ng-template>
+
+  <!-- Diretiva Switch -->
+  <div class="list-group mx-auto col3">
+    <ul [ngSwitch]="count">
+      <li *ngSwitchCase="1" class="list-group-item">One</li>
+      <li *ngSwitchCase="2" class="list-group-item">Two</li>
+      <li *ngSwitchCase="3" class="list-group-item">Three</li>
+      <li *ngSwitchCase="4" class="list-group-item">Four</li>
+      <li *ngSwitchCase="5" class="list-group-item">Five</li>
+      <li *ngSwitchCase="6" class="list-group-item">Six</li>
+      <li *ngSwitchCase="7" class="list-group-item">Seven</li>
+      <li *ngSwitchCase="8" class="list-group-item">Eigth</li>
+      <li *ngSwitchCase="9" class="list-group-item">Nine</li>
+      <li *ngSwitchDefault class="list-group-item">Ten</li>
+    </ul>
+  </div>
+
+  <!-- Diretiva For -->
+  <div class="list-group mx-auto col3">
+    <ul>
+      <li *ngFor="let pessoa of pessoas" class="list-group-item">O nome da pessoa é {{ pessoa.nome }} e sua idade é
+        {{ pessoa.idade }}.</li>
+    </ul>
+  </div>
+
+  <!-- Data binding -->
+  <h3 spaMarcaTexto corDeFundo="blue" corDoTexto="white">{{ pessoas[count+1].nome }}</h3>
+  <button class="btn btn-primary" (click)="clicou(pessoas[count].nome)">Clique aqui</button>
+
+  <!-- Diretiva Two Way binding -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Digita aqui" [(ngModel)]="label">
+    <h4 spaMarcaTexto corDeFundo="brown" corDoTexto="yellow"> Saída: {{ label }} </h4>
+  </div>
+
+</div>

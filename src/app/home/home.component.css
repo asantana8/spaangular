@@ -1,0 +1,40 @@
+.container {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.container h1 {
+  color: brown;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.container h2 {
+  color: rgb(13, 0, 255);
+  text-align: center;
+  font-weight: bold;
+}
+
+.container h3 {  
+  font-weight: bold;
+}
+
+.container button{
+  padding: auto;
+  margin: 7px;
+}
+
+.custom_menor_7 {
+  color: rgb(236, 183, 9);
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.custom_maior_7 {
+  color: rgba(44, 164, 14, 0.624);
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+}
